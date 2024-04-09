@@ -1,0 +1,25 @@
+CREATE SCHEMA starwars;
+USE starwars;
+
+CREATE TABLE empire(
+	 id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    species VARCHAR(255),
+    affiliation VARCHAR(255),
+    created_at DATETIME DEFAULT NOW()
+);
+INSERT INTO empire (name, species, affiliation) 
+VALUES
+("Darth Vader", "Human", "Galactic Empire"),
+("Grand Moff Tarkin", "Human", "Galactic Empire"),
+("Emperor Palpatine", "Human", "Galactic Empire"),
+("General Veers", "Human", "Galactic Empire"),
+("Admiral Piett", "Human", "Galactic Empire"),
+("Captain Needa", "Human", "Galactic Empire");
+
+SELECT * FROM empire;
+
+UPDATE empire SET species = "Alien" WHERE id = "3";
+DELETE FROM empire WHERE id="4";
+
+SELECT * FROM empire;
